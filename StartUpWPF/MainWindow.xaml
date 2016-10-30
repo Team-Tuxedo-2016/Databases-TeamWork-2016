@@ -1,0 +1,59 @@
+﻿<Window x:Class="StartUpWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StartUpWPF"
+        mc:Ignorable="d"
+        Title="Team-Tuxedo" Height="650" Width="750"
+        Icon="images/tuxedo.png"
+        Loaded="OnWindowFormLoaded">
+    
+    <Grid Margin="10,25,16,9">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="163*"/>
+            <ColumnDefinition Width="185*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="button" 
+                Content="Get Excell from ZIP and load the content to SQL db" 
+                HorizontalAlignment="Left" 
+                Margin="5,36,0,0" 
+                VerticalAlignment="Top" 
+                Width="302"
+                Grid.Column="1" Height="51" RenderTransformOrigin="0.49,0.519"/>
+        <Button x:Name="button1" 
+                Content="Get JSON report from SQL db" 
+                Grid.Column="1" 
+                HorizontalAlignment="Left" 
+                Margin="5,107,0,0" 
+                VerticalAlignment="Top" 
+                Width="302" Height="46"/>
+        <Button x:Name="button2" 
+                Content="Get XML report from SQL db" 
+                Grid.Column="1" 
+                HorizontalAlignment="Left" 
+                Margin="5,170,0,0" 
+                VerticalAlignment="Top" 
+                Width="302" Height="46"/>
+        <Button x:Name="button3" 
+                Content="Get Excell report from SQL db" 
+                Grid.Column="1" 
+                HorizontalAlignment="Left" 
+                Margin="5,230,0,0" 
+                VerticalAlignment="Top" 
+                Width="302" Height="46"/>
+        <Button x:Name="button4" 
+                Content="Get PDF report from SQL db" 
+                Grid.Column="1" 
+                HorizontalAlignment="Left" 
+                Margin="5,290,0,0" 
+                VerticalAlignment="Top" 
+                Width="302" Height="46"/>
+        <Image x:Name="Tuxedo" 
+               Grid.Column="2" 
+               Margin="80,92,72,0"
+               Panel.ZIndex="1"
+               Source="images/tuxedo.png" Height="231" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
