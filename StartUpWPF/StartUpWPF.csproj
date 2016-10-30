@@ -101,6 +101,16 @@
   <ItemGroup>
     <Resource Include="images\tuxedo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExcellReader\ExcellReader.csproj">
+      <Project>{54ce3d30-abde-4dcc-8a5f-57bc0ca7e823}</Project>
+      <Name>ExcellReader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZipReader\ZipReader.csproj">
+      <Project>{4d2b4978-70cc-4c51-b223-913f077c03c5}</Project>
+      <Name>ZipReader</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

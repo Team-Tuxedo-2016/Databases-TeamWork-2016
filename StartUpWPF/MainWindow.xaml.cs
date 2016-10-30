@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ZipReader;
 
 namespace StartUpWPF
 {
@@ -32,6 +33,8 @@ namespace StartUpWPF
 
         public void OnGetExcellFromZip(object sender, RoutedEventArgs e)
         {
+            //ZipReader.ZipReader.Read("../../../reports.zip");
+            ExcellReader.ExcellReader.Read();
             //TODO: implement in separate project (for example .Logic.dll) and call proper class instance or method 
             Console.WriteLine("Excell data was transfered from Zip to SQL db");
         }
