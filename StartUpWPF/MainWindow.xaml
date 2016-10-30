@@ -5,10 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StartUpWPF"
         mc:Ignorable="d"
-        Title="Team-Tuxedo" Height="650" Width="750"
-        Icon="images/tuxedo.png"
-        Loaded="OnWindowFormLoaded">
-    
+        Title="MainWindow" Height="650" Width="750">
     <Grid Margin="10,25,16,9">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20*"/>
@@ -21,35 +18,42 @@
                 Margin="5,36,0,0" 
                 VerticalAlignment="Top" 
                 Width="302"
-                Grid.Column="1" Height="51" RenderTransformOrigin="0.49,0.519"/>
+                Grid.Column="1" 
+                Height="51"
+                RenderTransformOrigin="0.49,0.519"
+                Click="OnGetExcellFromZip"/>
         <Button x:Name="button1" 
                 Content="Get JSON report from SQL db" 
                 Grid.Column="1" 
                 HorizontalAlignment="Left" 
                 Margin="5,107,0,0" 
                 VerticalAlignment="Top" 
-                Width="302" Height="46"/>
+                Width="302" Height="46"
+                Click="OnGetJsonReportFromDb"/>
         <Button x:Name="button2" 
                 Content="Get XML report from SQL db" 
                 Grid.Column="1" 
                 HorizontalAlignment="Left" 
                 Margin="5,170,0,0" 
                 VerticalAlignment="Top" 
-                Width="302" Height="46"/>
+                Width="302" Height="46"
+                Click="OnGetXmlReportFromDb"/>
         <Button x:Name="button3" 
                 Content="Get Excell report from SQL db" 
                 Grid.Column="1" 
                 HorizontalAlignment="Left" 
                 Margin="5,230,0,0" 
                 VerticalAlignment="Top" 
-                Width="302" Height="46"/>
+                Width="302" Height="46"
+                Click="OnGetExcellReportFromDb"/>
         <Button x:Name="button4" 
                 Content="Get PDF report from SQL db" 
                 Grid.Column="1" 
                 HorizontalAlignment="Left" 
                 Margin="5,290,0,0" 
                 VerticalAlignment="Top" 
-                Width="302" Height="46"/>
+                Width="302" Height="46"
+                Click="OnGetPdfReportFromDb"/>
         <Image x:Name="Tuxedo" 
                Grid.Column="2" 
                Margin="80,92,72,0"
