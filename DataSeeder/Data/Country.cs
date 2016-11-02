@@ -18,6 +18,7 @@ namespace DataSeeder.Data
         public Country()
         {
             this.Items = new HashSet<Item>();
+            this.Materials = new HashSet<Material>();
         }
     
         public int ID { get; set; }
@@ -25,5 +26,7 @@ namespace DataSeeder.Data
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Item> Items { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Material> Materials { get; set; }
     }
 }

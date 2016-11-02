@@ -51,7 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SeedXcelToDb.cs" />
     <Compile Include="Data\Brand.cs">
       <DependentUpon>TuxedoDb.tt</DependentUpon>
     </Compile>
@@ -94,21 +93,24 @@
     <Compile Include="Data\Type.cs">
       <DependentUpon>TuxedoDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="SeedXcelToDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="Data\TuxedoDb.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>TuxedoDb.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="Data\TuxedoDb.edmx.diagram">
       <DependentUpon>TuxedoDb.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Data\TuxedoDb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -120,9 +122,6 @@
       <DependentUpon>TuxedoDb.edmx</DependentUpon>
       <LastGenOutput>TuxedoDb.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -123,6 +123,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Materials_Countries">
+          <End Role="Countries" Type="Self.Countries" Multiplicity="1" />
+          <End Role="Materials" Type="Self.Materials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Materials">
+              <PropertyRef Name="CountryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -182,6 +194,10 @@
             <End Role="Types" EntitySet="Types" />
             <End Role="Items" EntitySet="Items" />
           </AssociationSet>
+          <AssociationSet Name="FK_Materials_Countries" Association="Self.FK_Materials_Countries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Materials" EntitySet="Materials" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -211,6 +227,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Items" Relationship="Self.FK_Items_Countries" FromRole="Countries" ToRole="Items" />
+          <NavigationProperty Name="Materials" Relationship="Self.FK_Materials_Countries" FromRole="Countries" ToRole="Materials" />
         </EntityType>
         <EntityType Name="Item">
           <Key>
@@ -236,6 +253,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="CountryID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Country" Relationship="Self.FK_Materials_Countries" FromRole="Materials" ToRole="Countries" />
           <NavigationProperty Name="Items" Relationship="Self.FK_Items_Materials" FromRole="Materials" ToRole="Items" />
         </EntityType>
         <EntityType Name="sysdiagram">
@@ -292,6 +310,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Materials_Countries">
+          <End Role="Countries" Type="Self.Country" Multiplicity="1" />
+          <End Role="Materials" Type="Self.Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Materials">
+              <PropertyRef Name="CountryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Items_Materials">
           <End Role="Materials" Type="Self.Material" Multiplicity="1" />
           <End Role="Items" Type="Self.Item" Multiplicity="*" />
@@ -335,6 +365,10 @@
           <AssociationSet Name="FK_Items_Countries" Association="Self.FK_Items_Countries">
             <End Role="Countries" EntitySet="Countries" />
             <End Role="Items" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Materials_Countries" Association="Self.FK_Materials_Countries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Materials" EntitySet="Materials" />
           </AssociationSet>
           <AssociationSet Name="FK_Items_Materials" Association="Self.FK_Items_Materials">
             <End Role="Materials" EntitySet="Materials" />
