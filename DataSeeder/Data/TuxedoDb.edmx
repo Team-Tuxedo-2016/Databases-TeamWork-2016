@@ -37,6 +37,7 @@
           <Property Name="ColorID" Type="int" Nullable="false" />
           <Property Name="TypeID" Type="int" Nullable="false" />
           <Property Name="MaterialID" Type="int" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
         </EntityType>
         <EntityType Name="Materials">
           <Key>
@@ -240,6 +241,7 @@
           <Property Name="ColorID" Type="Int32" Nullable="false" />
           <Property Name="TypeID" Type="Int32" Nullable="false" />
           <Property Name="MaterialID" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <NavigationProperty Name="Brand" Relationship="Self.FK_Items_Brands" FromRole="Items" ToRole="Brands" />
           <NavigationProperty Name="Color" Relationship="Self.FK_Items_Colors" FromRole="Items" ToRole="Colors" />
           <NavigationProperty Name="Country" Relationship="Self.FK_Items_Countries" FromRole="Items" ToRole="Countries" />
@@ -460,6 +462,7 @@
                 <ScalarProperty Name="ColorID" ColumnName="ColorID" />
                 <ScalarProperty Name="TypeID" ColumnName="TypeID" />
                 <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

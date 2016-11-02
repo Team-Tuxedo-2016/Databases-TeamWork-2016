@@ -21,6 +21,7 @@ namespace DataSeeder.Data
         public int ColorID { get; set; }
         public int TypeID { get; set; }
         public int MaterialID { get; set; }
+        public decimal Price { get; set; }
     
         public virtual Brand Brand { get; set; }
         public virtual Color Color { get; set; }

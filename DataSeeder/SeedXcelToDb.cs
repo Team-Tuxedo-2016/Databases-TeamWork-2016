@@ -152,6 +152,7 @@ namespace DataSeeder
                 var ColorId = reader.GetDouble(4).ToString();
                 var TypeId = reader.GetDouble(5).ToString();
                 var MaterialId = reader.GetDouble(6).ToString();
+                var Price = reader.GetDouble(7).ToString();
 
                 Console.WriteLine($@"Item: {model} with ID {Id} added to SQL db");
 
@@ -163,7 +164,8 @@ namespace DataSeeder
                     CountryID = int.Parse(CountryId),
                     ColorID = int.Parse(ColorId),
                     TypeID = int.Parse(TypeId),
-                    MaterialID = int.Parse(MaterialId)
+                    MaterialID = int.Parse(MaterialId),
+                    Price=decimal.Parse(Price)
                 });
             }
 
