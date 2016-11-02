@@ -37,12 +37,15 @@ namespace StartUpWPF
         {
             ZipReader.ZipReader.Read("../../../tables.zip");
             var db = new TuxedoDb();
-            SeedXcelToDb.SeedBrands("Brand", db);
-            SeedXcelToDb.SeedColors("Color", db);
-            SeedXcelToDb.SeedCountries("Brand", db);
-            SeedXcelToDb.SeedMaterials("Materials", db);
-            SeedXcelToDb.SeedTypes("Types", db);
-            SeedXcelToDb.SeedItems("Items", db);
+            using(db)
+            {
+                SeedXcelToDb.SeedBrands("Brand", db);
+                SeedXcelToDb.SeedColors("Color", db);
+                SeedXcelToDb.SeedCountries("Countries", db);
+                SeedXcelToDb.SeedMaterials("Materials", db);
+                SeedXcelToDb.SeedTypes("Types", db);
+                SeedXcelToDb.SeedItems("Items", db);
+            }
 
             Console.WriteLine("Excell data was transfered from Zip to SQL db");
         }
