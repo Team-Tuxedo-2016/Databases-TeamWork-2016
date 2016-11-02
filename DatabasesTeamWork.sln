@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartUpWPF", "StartUpWPF\St
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipReader", "ZipReader\ZipReader.csproj", "{4D2B4978-70CC-4C51-B223-913F077C03C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataSeeder", "DataSeeder\DataSeeder.csproj", "{92673080-71B5-4ECC-8FE7-D0C6151CCA29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateSqlDatatbase", "CreateSqlDatatbase\CreateSqlDatatbase.csproj", "{A08060BE-E2F8-4FF6-9A6D-F830E702D510}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{4D2B4978-70CC-4C51-B223-913F077C03C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D2B4978-70CC-4C51-B223-913F077C03C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D2B4978-70CC-4C51-B223-913F077C03C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92673080-71B5-4ECC-8FE7-D0C6151CCA29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92673080-71B5-4ECC-8FE7-D0C6151CCA29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92673080-71B5-4ECC-8FE7-D0C6151CCA29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92673080-71B5-4ECC-8FE7-D0C6151CCA29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A08060BE-E2F8-4FF6-9A6D-F830E702D510}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A08060BE-E2F8-4FF6-9A6D-F830E702D510}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A08060BE-E2F8-4FF6-9A6D-F830E702D510}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A08060BE-E2F8-4FF6-9A6D-F830E702D510}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

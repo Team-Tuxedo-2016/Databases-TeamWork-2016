@@ -54,6 +54,15 @@
                 VerticalAlignment="Top" 
                 Width="302" Height="46"
                 Click="OnGetPdfReportFromDb"/>
+        <Button x:Name="button5" 
+                Content="Create Database" 
+                Grid.Column="1" 
+                HorizontalAlignment="Left" 
+                Margin="5,360,0,0"
+                Background="Green"
+                VerticalAlignment="Top" 
+                Width="302" Height="46"
+                Click="OnCreateDatabaseFromScript"/>
         <Image x:Name="Tuxedo" 
                Grid.Column="2" 
                Margin="80,92,72,0"

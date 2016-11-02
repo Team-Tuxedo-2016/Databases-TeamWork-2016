@@ -1,5 +1,6 @@
 ﻿using System;
 using Ionic.Zip;
+using System.IO;
 
 namespace ZipReader
 {
@@ -14,10 +15,15 @@ namespace ZipReader
                 var entries = zip.Entries;
                 foreach (var entry in entries)
                 {
-                    if(!entry.IsDirectory)
+                    if (File.Exists(extractFolder + $"/{entry.FileName}"))
                     {
-                        entry.Extract(extractFolder);
-                        Console.WriteLine(entry.FileName+" Has been extracted");
+                        break;
+                    }
+
+                    if (!entry.IsDirectory)
+                    {
+                            entry.Extract(extractFolder);
+                            Console.WriteLine(entry.FileName + " Has been extracted");  
                     }
                 }
             }

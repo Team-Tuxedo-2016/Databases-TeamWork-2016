@@ -38,7 +38,16 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -89,6 +98,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -102,6 +114,14 @@
     <Resource Include="images\tuxedo.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CreateSqlDatatbase\CreateSqlDatatbase.csproj">
+      <Project>{a08060be-e2f8-4ff6-9a6d-f830e702d510}</Project>
+      <Name>CreateSqlDatatbase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataSeeder\DataSeeder.csproj">
+      <Project>{92673080-71b5-4ecc-8fe7-d0c6151cca29}</Project>
+      <Name>DataSeeder</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ZipReader\ZipReader.csproj">
       <Project>{4d2b4978-70cc-4c51-b223-913f077c03c5}</Project>
       <Name>ZipReader</Name>

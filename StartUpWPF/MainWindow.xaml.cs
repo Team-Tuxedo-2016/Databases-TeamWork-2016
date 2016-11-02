@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ZipReader;
+using DataSeeder;
+using DataSeeder.Data;
 
 namespace StartUpWPF
 {
@@ -34,7 +36,14 @@ namespace StartUpWPF
         public void OnGetExcellFromZip(object sender, RoutedEventArgs e)
         {
             ZipReader.ZipReader.Read("../../../tables.zip");
-            //TODO: implement in separate project (for example .Logic.dll) and call proper class instance or method 
+            var db = new TuxedoDb();
+            SeedXcelToDb.SeedBrands("Brand", db);
+            SeedXcelToDb.SeedColors("Color", db);
+            SeedXcelToDb.SeedCountries("Brand", db);
+            SeedXcelToDb.SeedMaterials("Materials", db);
+            SeedXcelToDb.SeedTypes("Types", db);
+            SeedXcelToDb.SeedItems("Items", db);
+
             Console.WriteLine("Excell data was transfered from Zip to SQL db");
         }
 
@@ -60,6 +69,12 @@ namespace StartUpWPF
         {
             //TODO: implement and call proper class instance or method
             Console.WriteLine("EXCELL report file was created from SQL db");
+        }
+
+        public void OnCreateDatabaseFromScript(object sender, RoutedEventArgs e)
+        {
+            CreateSqlDatatbase.CreateDb.ExecuteScript();
+            Console.WriteLine("Db Tuxedo has been created localy to your PC");
         }
     }
 }
