@@ -16,6 +16,7 @@ using ZipReader;
 using DataSeeder;
 using DataSeeder.Data;
 using PdfExporter;
+using XmlExporter;
 
 namespace StartUpWPF
 {
@@ -59,13 +60,13 @@ namespace StartUpWPF
 
         public void OnGetXmlReportFromDb(object sender, RoutedEventArgs e)
         {
-            //TODO: implement and call proper class instance or method
+            var db = new TuxedoDb();
+            ExportXmlFile.ExportTypes(db);
             Console.WriteLine("XML report file was created from SQL db");
         }
 
         public void OnGetPdfReportFromDb(object sender, RoutedEventArgs e)
         {
-            //TODO: implement and call proper class instance or method
             var db = new TuxedoDb();
             ExportPdfFile.ExportItems(db);
             Console.WriteLine("Pdf report file was created from SQL db");
