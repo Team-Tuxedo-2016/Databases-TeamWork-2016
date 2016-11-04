@@ -8,11 +8,18 @@ namespace JSONExporter
 {
     public static class ExportJSON
     {
-        public static void MadeInBulgaria(TuxedoDb db)
+        const string countryName = "Bulgaria";
+
+        static TuxedoDb db;
+
+        static ExportJSON()
         {
-            var filePath = "../../../MadeIn.json";
-            var countryName = "Bulgaria";
-            var countryId = db.Countries.Where(name => name.Name == countryName).Select(i=>i.ID).ToList()[0];
+            db = new TuxedoDb();
+        }
+
+        private static IQueryable MadeInBulgaria()
+        {
+            var countryId = db.Countries.Where(name => name.Name == countryName).Select(i => i.ID).ToList()[0];
 
             var report = db.Items
                 .Where(z => z.CountryID == countryId)
@@ -24,10 +31,29 @@ namespace JSONExporter
                     Price = x.Price
                 });
 
-            using (var stream = new StreamWriter(filePath))
+            return report;
+        }
+
+        public static void ExportFile()
+        {
+            var id = 1;
+            var path = "../../../JSON-Reports-MadeIN";
+
+            Directory.CreateDirectory(path);
+
+            var reports = ExportJSON.MadeInBulgaria();
+
+            foreach (var report in reports)
             {
-                var json = JsonConvert.SerializeObject(report, Formatting.Indented);
-                stream.Write(json);
+                var filePath = path + "/" + id + ".json";
+                File.Create(filePath).Close();
+                using (var stream = new StreamWriter(filePath))
+                {
+                    var json = JsonConvert.SerializeObject(report, Formatting.Indented);
+                    stream.Write(json);
+                }
+
+                id++;
             }
         }
     }

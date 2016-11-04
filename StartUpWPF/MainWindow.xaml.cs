@@ -55,8 +55,7 @@ namespace StartUpWPF
 
         public void OnGetJsonReportFromDb(object sender, RoutedEventArgs e)
         {
-            var db = new TuxedoDb();
-            ExportJSON.MadeInBulgaria(db);
+            ExportJSON.ExportFile();
             Console.WriteLine("JSON report file was created from SQL db");
         }
 
