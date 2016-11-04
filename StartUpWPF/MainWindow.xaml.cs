@@ -17,6 +17,7 @@ using DataSeeder;
 using DataSeeder.Data;
 using PdfExporter;
 using XmlExporter;
+using JSONExporter;
 
 namespace StartUpWPF
 {
@@ -54,7 +55,8 @@ namespace StartUpWPF
 
         public void OnGetJsonReportFromDb(object sender, RoutedEventArgs e)
         {
-            //TODO: implement and call proper class instance or method
+            var db = new TuxedoDb();
+            ExportJSON.MadeInBulgaria(db);
             Console.WriteLine("JSON report file was created from SQL db");
         }
 

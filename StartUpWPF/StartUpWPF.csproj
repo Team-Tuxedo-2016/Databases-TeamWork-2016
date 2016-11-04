@@ -122,6 +122,10 @@
       <Project>{92673080-71b5-4ecc-8fe7-d0c6151cca29}</Project>
       <Name>DataSeeder</Name>
     </ProjectReference>
+    <ProjectReference Include="..\JSONExporter\JSONExporter.csproj">
+      <Project>{6ff2dc1b-a060-4715-b046-619a0cea3fbc}</Project>
+      <Name>JSONExporter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PdfExporter\PdfExporter.csproj">
       <Project>{3ad40b0b-1d8c-4840-9c11-2fa3aab8105e}</Project>
       <Name>PdfExporter</Name>
