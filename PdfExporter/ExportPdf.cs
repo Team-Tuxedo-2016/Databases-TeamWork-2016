@@ -31,9 +31,9 @@ namespace PdfExporter
             var cellBrand = new PdfPCell(new Phrase("Suit Brand"));
             cellBrand.BackgroundColor = BaseColor.CYAN;
 
+            table.AddCell(cellBrand);
             table.AddCell(cellModel);
             table.AddCell(cellPrice);
-            table.AddCell(cellBrand);
 
             foreach (var item in db.Items)
             {
@@ -42,9 +42,9 @@ namespace PdfExporter
                     .Select(br => br.Name)
                     .FirstOrDefault();
 
-                table.AddCell(item.Model);
-                table.AddCell(item.Price.ToString());
                 table.AddCell(brand);
+                table.AddCell(item.Model);
+                table.AddCell(item.Price.ToString("0.00"));
             }
 
             doc.Add(table);
