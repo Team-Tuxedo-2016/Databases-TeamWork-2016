@@ -1,18 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using ZipReader;
 using DataSeeder;
 using DataSeeder.Data;
 using PdfExporter;
@@ -27,6 +14,11 @@ namespace StartUpWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        private const string createdMessage = "{0} data was transfered from Zip to SQL db";
+        private const string databaseCreatedMessage = "{0} has been created localy to your PC";
+        private const string importedMessage = "{0} were imported from {1} file";
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -51,43 +43,45 @@ namespace StartUpWPF
                 SeedXcelToDb.SeedItems("Items", db);
             }
 
-            Console.WriteLine("Excell data was transfered from Zip to SQL db");
+            Console.WriteLine(createdMessage, "Excell");
         }
 
         public void OnGetJsonReportFromDb(object sender, RoutedEventArgs e)
         {
             ExportJSON.ExportFile();
-            Console.WriteLine("JSON report file was created from SQL db");
+            Console.WriteLine(createdMessage, "JSON");
         }
 
         public void OnGetXmlReportFromDb(object sender, RoutedEventArgs e)
         {
             var db = new TuxedoDb();
             ExportXmlFile.ExportTypes(db);
-            Console.WriteLine("XML report file was created from SQL db");
+            Console.WriteLine(createdMessage, "XML");
         }
 
         public void OnGetPdfReportFromDb(object sender, RoutedEventArgs e)
         {
             var db = new TuxedoDb();
             ExportPdfFile.ExportItems(db);
-            Console.WriteLine("Pdf report file was created from SQL db");
+            Console.WriteLine(createdMessage, "PDF");
         }
 
         public void OnGetExcellReportFromDb(object sender, RoutedEventArgs e)
         {
             //TODO: implement and call proper class instance or method
-            Console.WriteLine("EXCELL report file was created from SQL db");
+            Console.WriteLine(createdMessage, "Excell");
         }
 
         public void OnCreateDatabaseFromScript(object sender, RoutedEventArgs e)
         {
             CreateSqlDatatbase.CreateDb.ExecuteScript();
-            Console.WriteLine("Db Tuxedo has been created localy to your PC");
+            Console.WriteLine(databaseCreatedMessage, "Db Tuxedo");
         }
 
         public void OnGetXmlAndLoadItToDb(object sender, RoutedEventArgs e)
         {
+            Console.WriteLine(importedMessage, "Sales", "XML");
+
             var db = new TuxedoDb();
             var salesFromXml = ParseXml.Deserialize<Sale>();
             using (db)
@@ -95,7 +89,7 @@ namespace StartUpWPF
                 SeedXmlToDb.SeedSales(db, salesFromXml);
             }
 
-            Console.WriteLine("Sales were imported from XML file");
+            Console.WriteLine(importedMessage, "Sales", "XML");
         }
     }
 }
