@@ -80,8 +80,6 @@ namespace StartUpWPF
 
         public void OnGetXmlAndLoadItToDb(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine(importedMessage, "Sales", "XML");
-
             var db = new TuxedoDb();
             var salesFromXml = ParseXml.Deserialize<Sale>();
             using (db)
