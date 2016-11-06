@@ -17,6 +17,7 @@ using DataSeeder;
 using DataSeeder.Data;
 using PdfExporter;
 using XmlExporter;
+using XmlImporter;
 using JSONExporter;
 
 namespace StartUpWPF
@@ -33,14 +34,14 @@ namespace StartUpWPF
 
         private void OnWindowFormLoaded(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         public void OnGetExcellFromZip(object sender, RoutedEventArgs e)
         {
             ZipReader.ZipReader.Read("../../../tables.zip");
             var db = new TuxedoDb();
-            using(db)
+            using (db)
             {
                 SeedXcelToDb.SeedBrands("Brand", db);
                 SeedXcelToDb.SeedColors("Color", db);
@@ -83,6 +84,18 @@ namespace StartUpWPF
         {
             CreateSqlDatatbase.CreateDb.ExecuteScript();
             Console.WriteLine("Db Tuxedo has been created localy to your PC");
+        }
+
+        public void OnGetXmlAndLoadItToDb(object sender, RoutedEventArgs e)
+        {
+            var db = new TuxedoDb();
+            var salesFromXml = ParseXml.Deserialize<Sale>();
+            using (db)
+            {
+                SeedXmlToDb.SeedSales(db, salesFromXml);
+            }
+
+            Console.WriteLine("Sales were imported from XML file");
         }
     }
 }

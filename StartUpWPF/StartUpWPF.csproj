@@ -134,6 +134,10 @@
       <Project>{3d4ca292-b57c-4c49-a0b9-155219feaef0}</Project>
       <Name>XmlExporter</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XmlImporter\XmlImporter.csproj">
+      <Project>{010bacb6-9bcb-4dbf-a3c9-6ee45187bbb2}</Project>
+      <Name>XmlImporter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ZipReader\ZipReader.csproj">
       <Project>{4d2b4978-70cc-4c51-b223-913f077c03c5}</Project>
       <Name>ZipReader</Name>

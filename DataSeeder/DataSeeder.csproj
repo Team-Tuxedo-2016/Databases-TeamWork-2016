@@ -66,10 +66,7 @@
     <Compile Include="Data\Material.cs">
       <DependentUpon>TuxedoDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>TuxedoDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\sp_helpdiagrams_Result.cs">
+    <Compile Include="Data\Sale.cs">
       <DependentUpon>TuxedoDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\sysdiagram.cs">
@@ -95,6 +92,7 @@
     </Compile>
     <Compile Include="SeedXcelToDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeedXmlToDb.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Sales>
+  <Sale>
+    <Id>1</Id>
+    <StoreName>Corner Store</StoreName>
+    <TurnOver>420</TurnOver>
+  </Sale>
+  <Sale>
+    <Id>2</Id>
+    <StoreName>Gabrovo Mall</StoreName>
+    <TurnOver>650</TurnOver>
+  </Sale>
+  <Sale>
+    <Id>3</Id>
+    <StoreName>Womens's pazar</StoreName>
+    <TurnOver>610</TurnOver>
+  </Sale>
+  <Sale>
+    <Id>4</Id>
+    <StoreName>Fancy Tuxedos Shop</StoreName>
+    <TurnOver>1290</TurnOver>
+  </Sale>
+  <Sale>
+    <Id>5</Id>
+    <StoreName>Duty free shop</StoreName>
+    <TurnOver>2300</TurnOver>
+  </Sale>
+  <Sale>
+    <Id>6</Id>
+    <StoreName>Giga Mall</StoreName>
+    <TurnOver>1800</TurnOver>
+  </Sale>
+  <Sale>
+    <Id>7</Id>
+    <StoreName>Kapala Charshi</StoreName>
+    <TurnOver>900</TurnOver>
+  </Sale>
+  <Sale>
+    <Id>8</Id>
+    <StoreName>Fake Outlet</StoreName>
+    <TurnOver>1400</TurnOver>
+  </Sale>
+  <Sale>
+    <Id>9</Id>
+    <StoreName>Ilyantzi</StoreName>
+    <TurnOver>4000</TurnOver>
+  </Sale>
+  <Sale>
+    <Id>10</Id>
+    <StoreName>Under The Table Trader</StoreName>
+    <TurnOver>3500</TurnOver>
+  </Sale>
+</Sales>

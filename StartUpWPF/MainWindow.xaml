@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StartUpWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="750">
+        Title="Tuxedo-TeamWork-2016" Height="650" Width="750"
+        Icon="images/tuxedo.png">
     <Grid Margin="10,25,16,9">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20*"/>
@@ -54,11 +55,19 @@
                 VerticalAlignment="Top" 
                 Width="302" Height="46"
                 Click="OnGetPdfReportFromDb"/>
+        <Button x:Name="button6" 
+                Content="Get XML and load it to SQL db" 
+                Grid.Column="1" 
+                HorizontalAlignment="Left" 
+                Margin="5,355,0,0" 
+                VerticalAlignment="Top" 
+                Width="302" Height="46"
+                Click="OnGetXmlAndLoadItToDb"/>
         <Button x:Name="button5" 
                 Content="Create Database" 
                 Grid.Column="1" 
                 HorizontalAlignment="Left" 
-                Margin="5,360,0,0"
+                Margin="5,420,0,0"
                 Background="Green"
                 VerticalAlignment="Top" 
                 Width="302" Height="46"
