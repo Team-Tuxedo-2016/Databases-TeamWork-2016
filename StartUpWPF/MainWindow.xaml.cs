@@ -6,6 +6,7 @@ using PdfExporter;
 using XmlExporter;
 using XmlImporter;
 using JSONExporter;
+using ExcellExporter;
 
 namespace StartUpWPF
 {
@@ -70,7 +71,8 @@ namespace StartUpWPF
 
         public void OnGetExcellReportFromDb(object sender, RoutedEventArgs e)
         {
-            //TODO: implement and call proper class instance or method
+            var db = new TuxedoDb();
+            ExportExcell.Export(db);
             Console.WriteLine(CreatedMessage, "Excell");
         }
 
