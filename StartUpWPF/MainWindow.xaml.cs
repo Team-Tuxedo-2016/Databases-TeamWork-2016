@@ -14,9 +14,11 @@ namespace StartUpWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const string createdMessage = "{0} data was transfered from Zip to SQL db";
-        private const string databaseCreatedMessage = "{0} has been created localy to your PC";
-        private const string importedMessage = "{0} were imported from {1} file";
+
+        private const string DataTransfered = "{0} data was transfered from Zip to SQL db";
+        private const string CreatedMessage = "{0} report file was created from SQL db";
+        private const string DatabaseCreatedMessage = "{0} has been created localy to your PC";
+        private const string ImportedMessage = "{0} were imported from {1} file";
 
 
         public MainWindow()
@@ -43,39 +45,39 @@ namespace StartUpWPF
                 SeedXcelToDb.SeedItems("Items", db);
             }
 
-            Console.WriteLine(createdMessage, "Excell");
+            Console.WriteLine(DataTransfered, "Excell");
         }
 
         public void OnGetJsonReportFromDb(object sender, RoutedEventArgs e)
         {
             ExportJSON.ExportFile();
-            Console.WriteLine(createdMessage, "JSON");
+            Console.WriteLine(CreatedMessage, "JSON");
         }
 
         public void OnGetXmlReportFromDb(object sender, RoutedEventArgs e)
         {
             var db = new TuxedoDb();
             ExportXmlFile.ExportTypes(db);
-            Console.WriteLine(createdMessage, "XML");
+            Console.WriteLine(CreatedMessage, "XML");
         }
 
         public void OnGetPdfReportFromDb(object sender, RoutedEventArgs e)
         {
             var db = new TuxedoDb();
             ExportPdfFile.ExportItems(db);
-            Console.WriteLine(createdMessage, "PDF");
+            Console.WriteLine(CreatedMessage, "PDF");
         }
 
         public void OnGetExcellReportFromDb(object sender, RoutedEventArgs e)
         {
             //TODO: implement and call proper class instance or method
-            Console.WriteLine(createdMessage, "Excell");
+            Console.WriteLine(CreatedMessage, "Excell");
         }
 
         public void OnCreateDatabaseFromScript(object sender, RoutedEventArgs e)
         {
             CreateSqlDatatbase.CreateDb.ExecuteScript();
-            Console.WriteLine(databaseCreatedMessage, "Db Tuxedo");
+            Console.WriteLine(DatabaseCreatedMessage, "Db Tuxedo");
         }
 
         public void OnGetXmlAndLoadItToDb(object sender, RoutedEventArgs e)
@@ -87,7 +89,7 @@ namespace StartUpWPF
                 SeedXmlToDb.SeedSales(db, salesFromXml);
             }
 
-            Console.WriteLine(importedMessage, "Sales", "XML");
+            Console.WriteLine(ImportedMessage, "Sales", "XML");
         }
     }
 }
