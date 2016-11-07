@@ -5,7 +5,7 @@ using DataSeeder.Data;
 
 namespace ExcellExporter
 {
-    public class ExportExcell
+    public class ExportExcel
     {
         private const string ReportFileInUse =
                     "A new report failed to be created. Make sure you have closed the current last report file before generating a new or choose where to save it.";

@@ -72,7 +72,7 @@ namespace StartUpWPF
         public void OnGetExcellReportFromDb(object sender, RoutedEventArgs e)
         {
             var db = new TuxedoDb();
-            var message =  ExportExcell.Export(db);
+            var message =  ExportExcel.Export(db);
             Console.WriteLine(message);
         }
 
