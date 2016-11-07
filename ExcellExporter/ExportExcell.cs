@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Runtime.InteropServices;
 using Microsoft.Office.Interop.Excel;
 using DataSeeder.Data;
@@ -8,9 +7,16 @@ namespace ExcellExporter
 {
     public class ExportExcell
     {
-        public static void Export(TuxedoDb db)
+        private const string ReportFileInUse =
+                    "A new report failed to be created. Make sure you have closed the current last report file before generating a new or choose where to save it.";
+        private const string CreatedSuccesfully = "Excel report created at: ";
+
+
+        public static string Export(TuxedoDb db)
         {
             var xlApp = new Application();
+            string executionMessage = CreatedSuccesfully;
+            bool reportSuccesfull = true;
 
             object misValue = System.Reflection.Missing.Value;
 
@@ -39,7 +45,16 @@ namespace ExcellExporter
 
             var fileLocation = GenerateFileLocation("reports.xls");
 
-            xlWorkBook.SaveAs(fileLocation, XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            try
+            {
+                xlWorkBook.SaveAs(fileLocation, XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            }
+            catch (COMException)
+            {
+                executionMessage = ReportFileInUse;
+                reportSuccesfull = false;
+            }
+
             xlWorkBook.Close(true, misValue, misValue);
             xlApp.Quit();
 
@@ -47,8 +62,12 @@ namespace ExcellExporter
             Marshal.ReleaseComObject(xlWorkBook);
             Marshal.ReleaseComObject(xlApp);
 
-            //TODO Return as message
-            Console.WriteLine($"Excel file created at {fileLocation}");
+            if (reportSuccesfull)
+            {
+                executionMessage = executionMessage + fileLocation;
+            }
+
+            return executionMessage;
         }
 
         private static string GenerateFileLocation(string fileName)

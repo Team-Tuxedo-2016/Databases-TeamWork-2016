@@ -72,8 +72,8 @@ namespace StartUpWPF
         public void OnGetExcellReportFromDb(object sender, RoutedEventArgs e)
         {
             var db = new TuxedoDb();
-            ExportExcell.Export(db);
-            Console.WriteLine(CreatedMessage, "Excell");
+            var message =  ExportExcell.Export(db);
+            Console.WriteLine(message);
         }
 
         public void OnCreateDatabaseFromScript(object sender, RoutedEventArgs e)
