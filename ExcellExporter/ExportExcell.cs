@@ -11,6 +11,7 @@ namespace ExcellExporter
         public static void Export(TuxedoDb db)
         {
             var xlApp = new Application();
+
             object misValue = System.Reflection.Missing.Value;
 
             var xlWorkBook = xlApp.Workbooks.Add(misValue);
@@ -36,11 +37,7 @@ namespace ExcellExporter
                 row++;
             }
 
-            //TODO revert 3 directories back
-            string currentDirectory = Directory.GetCurrentDirectory();
-            currentDirectory.Replace(@"StartUpWPF\bin\Debug", "");
-
-            var fileLocation = currentDirectory + @"\reports.xls";
+            var fileLocation = GenerateFileLocation("reports.xls");
 
             xlWorkBook.SaveAs(fileLocation, XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
             xlWorkBook.Close(true, misValue, misValue);
@@ -52,6 +49,16 @@ namespace ExcellExporter
 
             //TODO Return as message
             Console.WriteLine($"Excel file created at {fileLocation}");
+        }
+
+        private static string GenerateFileLocation(string fileName)
+        {
+            var directory = Directory.GetCurrentDirectory();
+            directory = directory.Replace(@"\StartUpWPF\bin\Debug", "");
+
+            var filePath = directory + "/" + fileName;
+
+            return filePath;
         }
     }
 }
