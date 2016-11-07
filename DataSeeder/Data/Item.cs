@@ -9,9 +9,11 @@
 
 namespace DataSeeder.Data
 {
+    using MongoDB.Bson.Serialization.Attributes;
     using System;
     using System.Collections.Generic;
-    
+
+    [BsonIgnoreExtraElements]
     public partial class Item
     {
         public int ID { get; set; }

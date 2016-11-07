@@ -7,6 +7,7 @@ using XmlExporter;
 using XmlImporter;
 using JSONExporter;
 using ExcellExporter;
+using MongoDBHandler;
 
 namespace StartUpWPF
 {
@@ -32,7 +33,7 @@ namespace StartUpWPF
 
         }
 
-        public void OnGetExcellFromZip(object sender, RoutedEventArgs e)
+        public async void OnGetExcellFromZip(object sender, RoutedEventArgs e)
         {
             ZipReader.ZipReader.Read("../../../tables.zip");
             var db = new TuxedoDb();
@@ -47,6 +48,11 @@ namespace StartUpWPF
             }
 
             Console.WriteLine(DataTransfered, "Excell");
+
+            var mongo = new MongoHandler("Tuxedos");
+            await mongo.TransferToMSSQL();
+
+            Console.WriteLine("Data from MongoDb Imported!");
         }
 
         public void OnGetJsonReportFromDb(object sender, RoutedEventArgs e)

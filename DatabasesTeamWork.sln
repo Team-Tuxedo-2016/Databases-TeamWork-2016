@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartUpWPF", "StartUpWPF\StartUpWPF.csproj", "{B7ED856B-5724-4841-8B02-ADFDC980EE0A}"
 EndProject
@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelExporter", "ExcellExporter\ExcelExporter.csproj", "{6872A4EF-0C83-4AAB-82FD-47FB31FEC849}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDBHandler", "MongoDBHandler\MongoDBHandler.csproj", "{D3DFFFB7-417D-4768-BF37-72AE6FCC45F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,6 +70,10 @@ Global
 		{6872A4EF-0C83-4AAB-82FD-47FB31FEC849}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6872A4EF-0C83-4AAB-82FD-47FB31FEC849}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6872A4EF-0C83-4AAB-82FD-47FB31FEC849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3DFFFB7-417D-4768-BF37-72AE6FCC45F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3DFFFB7-417D-4768-BF37-72AE6FCC45F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3DFFFB7-417D-4768-BF37-72AE6FCC45F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3DFFFB7-417D-4768-BF37-72AE6FCC45F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

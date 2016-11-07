@@ -9,9 +9,11 @@
 
 namespace DataSeeder.Data
 {
+    using MongoDB.Bson.Serialization.Attributes;
     using System;
     using System.Collections.Generic;
-    
+
+    [BsonIgnoreExtraElements]
     public partial class Brand
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

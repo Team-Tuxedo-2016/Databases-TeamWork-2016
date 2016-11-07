@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{92673080-71B5-4ECC-8FE7-D0C6151CCA29}</ProjectGuid>
+    <ProjectGuid>{D3DFFFB7-417D-4768-BF37-72AE6FCC45F2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataSeeder</RootNamespace>
-    <AssemblyName>DataSeeder</AssemblyName>
+    <RootNamespace>MongoDBHandler</RootNamespace>
+    <AssemblyName>MongoDBHandler</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -53,8 +53,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,74 +61,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Brand.cs">
-      <DependentUpon>TuxedoDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Color.cs">
-      <DependentUpon>TuxedoDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Country.cs">
-      <DependentUpon>TuxedoDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Item.cs">
-      <DependentUpon>TuxedoDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Material.cs">
-      <DependentUpon>TuxedoDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Sale.cs">
-      <DependentUpon>TuxedoDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\sysdiagram.cs">
-      <DependentUpon>TuxedoDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\TuxedoDb.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TuxedoDb.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\TuxedoDb.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TuxedoDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\TuxedoDb.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TuxedoDb.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Type.cs">
-      <DependentUpon>TuxedoDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SeedXcelToDb.cs" />
+    <Compile Include="MongoHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SeedXmlToDb.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
-    <EntityDeploy Include="Data\TuxedoDb.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TuxedoDb.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Data\TuxedoDb.edmx.diagram">
-      <DependentUpon>TuxedoDb.edmx</DependentUpon>
-    </None>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Data\TuxedoDb.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TuxedoDb.edmx</DependentUpon>
-      <LastGenOutput>TuxedoDb.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Data\TuxedoDb.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TuxedoDb.edmx</DependentUpon>
-      <LastGenOutput>TuxedoDb.cs</LastGenOutput>
-    </Content>
+    <ProjectReference Include="..\DataSeeder\DataSeeder.csproj">
+      <Project>{92673080-71b5-4ecc-8fe7-d0c6151cca29}</Project>
+      <Name>DataSeeder</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
