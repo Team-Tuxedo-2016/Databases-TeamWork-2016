@@ -1,11 +1,11 @@
-﻿using DataSeeder.Data;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
-using System.IO;
-using System.Linq;
-
-namespace PdfExporter
+﻿namespace PdfExporter
 {
+    using System.IO;
+    using System.Linq;
+    using DataSeeder.Data;
+    using iTextSharp.text;
+    using iTextSharp.text.pdf;
+
     public static class ExportPdfFile
     {
         public static void ExportItems(TuxedoDb db)
@@ -15,15 +15,14 @@ namespace PdfExporter
             Document doc = new Document();
             PdfWriter writer = PdfWriter.GetInstance(doc, fs);
             doc.Open();
-            doc.AddHeader("","Catalogue of Suits");
+            doc.AddHeader("", "Catalogue of Suits");
 
-            
             var heading = new Phrase("Catalogue of Suits");
             doc.Add(heading);
 
             var table = new PdfPTable(3);
             table.WidthPercentage = 80;
-            
+
             var cellModel = new PdfPCell(new Phrase("Suit Model"));
             cellModel.BackgroundColor = BaseColor.CYAN;
             var cellPrice = new PdfPCell(new Phrase("Suit Price"));

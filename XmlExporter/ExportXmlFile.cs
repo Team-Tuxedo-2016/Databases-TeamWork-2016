@@ -1,9 +1,9 @@
-﻿using DataSeeder.Data;
-using System.Text;
-using System.Xml;
-
-namespace XmlExporter
+﻿namespace XmlExporter
 {
+    using System.Text;
+    using System.Xml;
+    using DataSeeder.Data;
+
     public static class ExportXmlFile
     {
         public static void ExportTypes(TuxedoDb db)
@@ -20,7 +20,7 @@ namespace XmlExporter
                 writer.WriteStartDocument();
                 writer.WriteStartElement("types");
 
-                foreach ( var type in db.Types)
+                foreach (var type in db.Types)
                 {
                     writer.WriteStartElement("type");
                     writer.WriteElementString("name", type.Name);

@@ -1,14 +1,14 @@
-﻿using DataSeeder.Data;
-using System;
-using System.Data.OleDb;
-
-namespace DataSeeder
+﻿namespace DataSeeder
 {
+    using DataSeeder.Data;
+    using System;
+    using System.Data.OleDb;
+
     public static class SeedXcelToDb
     {
         public static void SeedBrands(string excelFileName, TuxedoDb db)
         {
-            var connectionString = $"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\\..\\..\\ExtractedExcelFiles\\tables\\{excelFileName}.xlsx; Extended Properties = \"Excel 12.0 Xml;HDR=YES\"";
+            var connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\\..\\..\\ExtractedExcelFiles\\tables\\"+excelFileName+".xlsx; Extended Properties = \"Excel 12.0 Xml;HDR=YES\"";
             OleDbConnection connection = new OleDbConnection(connectionString);
 
             connection.Open();
@@ -165,7 +165,7 @@ namespace DataSeeder
                     ColorID = int.Parse(ColorId),
                     TypeID = int.Parse(TypeId),
                     MaterialID = int.Parse(MaterialId),
-                    Price=decimal.Parse(Price)
+                    Price = decimal.Parse(Price)
                 });
             }
 

@@ -16,12 +16,10 @@ namespace StartUpWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-
         private const string DataTransfered = "{0} data was transfered from Zip to SQL db";
         private const string CreatedMessage = "{0} report file was created from SQL db";
         private const string DatabaseCreatedMessage = "{0} has been created localy to your PC";
         private const string ImportedMessage = "{0} were imported from {1} file";
-
 
         public MainWindow()
         {
@@ -30,7 +28,6 @@ namespace StartUpWPF
 
         private void OnWindowFormLoaded(object sender, RoutedEventArgs e)
         {
-
         }
 
         public async void OnGetExcellFromZip(object sender, RoutedEventArgs e)
@@ -49,7 +46,7 @@ namespace StartUpWPF
 
             Console.WriteLine(DataTransfered, "Excell");
 
-            var mongo = new MongoHandler("Tuxedos");
+            var mongo = new MongoHandler("TuxedoDB");
             await mongo.TransferToMSSQL();
 
             Console.WriteLine("Data from MongoDb Imported!");

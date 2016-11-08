@@ -1,12 +1,8 @@
-﻿using DataSeeder.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataSeeder
+﻿namespace DataSeeder
 {
+    using System.Collections.Generic;
+    using Data;
+
     public static class SeedXmlToDb
     {
         public static void SeedSales(TuxedoDb db, IEnumerable<Sale> salesList)
@@ -15,7 +11,7 @@ namespace DataSeeder
             {
                 db.Sales.Add(new Sale()
                 {
-                    Id=sale.Id,
+                    Id = sale.Id,
                     StoreName = sale.StoreName,
                     TurnOver = sale.TurnOver
                 });

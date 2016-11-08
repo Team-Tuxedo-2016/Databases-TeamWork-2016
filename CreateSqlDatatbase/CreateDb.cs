@@ -1,7 +1,7 @@
-﻿using DataSeeder.Data;
-
-namespace CreateSqlDatatbase
+﻿namespace CreateSqlDatatbase
 {
+    using DataSeeder.Data;
+
     public static class CreateDb
     {
         public static void ExecuteScript()

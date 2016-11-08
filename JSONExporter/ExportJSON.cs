@@ -1,37 +1,19 @@
-﻿using DataSeeder.Data;
-using Newtonsoft.Json;
-using System.IO;
-using System.Linq;
-
-
-namespace JSONExporter
+﻿namespace JSONExporter
 {
+    using System.IO;
+    using System.Linq;
+    using DataSeeder.Data;
+    using Newtonsoft.Json;
+
     public static class ExportJSON
     {
-        const string countryName = "Bulgaria";
+        private const string CountryName = "Bulgaria";
 
-        static TuxedoDb db;
+        private static TuxedoDb db;
 
         static ExportJSON()
         {
             db = new TuxedoDb();
-        }
-
-        private static IQueryable MadeInBulgaria()
-        {
-            var countryId = db.Countries.Where(name => name.Name == countryName).Select(i => i.ID).ToList()[0];
-
-            var report = db.Items
-                .Where(z => z.CountryID == countryId)
-                .Select(x => new
-                {
-                    Brand = x.Brand.Name,
-                    Model = x.Model,
-                    Type = x.Type.Name,
-                    Price = x.Price
-                });
-
-            return report;
         }
 
         public static void ExportFile()
@@ -55,6 +37,23 @@ namespace JSONExporter
 
                 id++;
             }
+        }
+
+        private static IQueryable MadeInBulgaria()
+        {
+            var countryId = db.Countries.Where(name => name.Name == CountryName).Select(i => i.ID).ToList()[0];
+
+            var report = db.Items
+                .Where(z => z.CountryID == countryId)
+                .Select(x => new
+                {
+                    Brand = x.Brand.Name,
+                    Model = x.Model,
+                    Type = x.Type.Name,
+                    Price = x.Price
+                });
+
+            return report;
         }
     }
 }

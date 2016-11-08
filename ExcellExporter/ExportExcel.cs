@@ -1,16 +1,16 @@
-﻿using System.IO;
-using System.Runtime.InteropServices;
-using Microsoft.Office.Interop.Excel;
-using DataSeeder.Data;
-
-namespace ExcellExporter
+﻿namespace ExcellExporter
 {
+    using System.IO;
+    using System.Runtime.InteropServices;
+    using DataSeeder.Data;
+    using Microsoft.Office.Interop.Excel;
+
     public class ExportExcel
     {
         private const string ReportFileInUse =
                     "A new report failed to be created. Make sure you have closed the current last report file before generating a new or choose where to save it.";
-        private const string CreatedSuccesfully = "Excel report created at: ";
 
+        private const string CreatedSuccesfully = "Excel report created at: ";
 
         public static string Export(TuxedoDb db)
         {
