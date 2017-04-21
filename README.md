@@ -1,6 +1,8 @@
 # Databases-TeamWork-2016
 
 ![project](https://cloud.githubusercontent.com/assets/3619393/10135708/e4b681d4-65f8-11e5-9243-0aea8fa008eb.png)
+![project](./ScreenShots/TuxedoDbScreenShot.jpg)
+![project](./ScreenShots/TuxedoDbDiagramm.jpg)
 
 # Functionality
 
